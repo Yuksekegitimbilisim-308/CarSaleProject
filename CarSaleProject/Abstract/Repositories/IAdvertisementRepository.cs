@@ -1,4 +1,5 @@
 ﻿using CarSaleProject.Entities;
+using CarSaleProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace CarSaleProject.Abstract.Repositories
 {
     public interface IAdvertisementRepository : IGenericRepository<Advertisement>
     {
+        List<AdvertisementListModel> GetAllBrandWithSalesManagerAndCar();
     }
 }

@@ -28,24 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            btnCarForm = new Button();
+            btnSalesMForm = new Button();
             dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
+            // btnCarForm
+            // 
+            btnCarForm.Location = new Point(1, 1);
+            btnCarForm.Name = "btnCarForm";
+            btnCarForm.Size = new Size(124, 23);
+            btnCarForm.TabIndex = 0;
+            btnCarForm.Text = "Araç Yönetimi";
+            btnCarForm.UseVisualStyleBackColor = true;
+            // 
+            // btnSalesMForm
+            // 
+            btnSalesMForm.Location = new Point(131, 1);
+            btnSalesMForm.Name = "btnSalesMForm";
+            btnSalesMForm.Size = new Size(124, 23);
+            btnSalesMForm.TabIndex = 1;
+            btnSalesMForm.Text = "Satış Temsilcileri";
+            btnSalesMForm.UseVisualStyleBackColor = true;
+            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(4, 201);
+            dataGridView1.Location = new Point(1, 185);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(685, 150);
-            dataGridView1.TabIndex = 0;
+            dataGridView1.Size = new Size(904, 265);
+            dataGridView1.TabIndex = 2;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(905, 450);
             Controls.Add(dataGridView1);
+            Controls.Add(btnSalesMForm);
+            Controls.Add(btnCarForm);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -55,6 +77,8 @@
 
         #endregion
 
+        private Button btnCarForm;
+        private Button btnSalesMForm;
         private DataGridView dataGridView1;
     }
 }

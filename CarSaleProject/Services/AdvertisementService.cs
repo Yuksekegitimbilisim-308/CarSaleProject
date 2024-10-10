@@ -1,6 +1,9 @@
-﻿using CarSaleProject.Abstract.Repositories;
+﻿using CarSaleProject;
+using CarSaleProject.Abstract.Repositories;
 using CarSaleProject.Abstract.Services;
 using CarSaleProject.Entities;
+using CarSaleProject.Models;
+using CarSaleProject.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +15,11 @@ namespace AdvertisementSaleProject.Services
     public class AdvertisementService : IAdvertisementService
     {
         IAdvertisementRepository _repository;
-
-        public AdvertisementService(IAdvertisementRepository repository)
+        CarSalesDbContext _context;
+        public AdvertisementService()
         {
-            _repository = repository;
+            _context = new CarSalesDbContext();
+            _repository = new AdvertisementRepository(_context);
         }
 
         public void Add(Advertisement entity)
@@ -36,6 +40,11 @@ namespace AdvertisementSaleProject.Services
         public List<Advertisement> GetAll()
         {
             return _repository.GetAll();
+        }
+
+        public List<AdvertisementListModel> GetAllBrandWithSalesManagerAndCar()
+        {
+            return _repository.GetAllBrandWithSalesManagerAndCar();
         }
 
         public void Update(Advertisement entity)

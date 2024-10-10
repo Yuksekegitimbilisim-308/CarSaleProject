@@ -1,15 +1,19 @@
-﻿using CarSaleProject.Abstract.Repositories;
+﻿using CarSaleProject;
+using CarSaleProject.Abstract.Repositories;
 using CarSaleProject.Abstract.Services;
 using CarSaleProject.Entities;
+using CarSaleProject.Repositories;
 namespace SalesManagerSaleProject.Services
 {
     public class SalesManagerService : ISalesManagerService
     {
         ISalesManagerRepository _repository;
+        CarSalesDbContext _context;
 
-        public SalesManagerService(ISalesManagerRepository repository)
+        public SalesManagerService()
         {
-            _repository = repository;
+            _context = new CarSalesDbContext();
+            _repository = new SalesManagerRepository(_context);
         }
         public void Add(SalesManager entity)
         {

@@ -27,17 +27,22 @@ namespace CarSaleProject.Repositories
 
         public void Delete(int id)
         {
-            var entity =  Get(id);
+            var entity = Get(id);
             _context.Set<T>().Remove(entity);
             _context.SaveChanges();
         }
 
-        
-
         public void Update(T entity)
         {
-            _context.Update(entity);
-            _context.SaveChanges();
+            //_context.Update(entity);
+            if (_context.Entry(entity).State == Microsoft.EntityFrameworkCore.EntityState.Modified)
+            {
+                _context.Entry(entity).Entity.Equals(entity);
+                _context.SaveChanges();
+
+
+            }
+
         }
     }
 }

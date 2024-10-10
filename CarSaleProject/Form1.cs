@@ -21,5 +21,17 @@ namespace CarSaleProject
         {
             dataGridView1.DataSource = _advertisementService.GetAllBrandWithSalesManagerAndCar();
         }
+
+        private void btnCarForm_Click(object sender, EventArgs e)
+        {
+            CarManagement carForm = new CarManagement();
+            carForm.ShowDialog();
+        }
+
+        private void btnSalesMForm_Click(object sender, EventArgs e)
+        {
+            SalesManagerManagement form = new SalesManagerManagement();
+            form.ShowDialog();
+        }
     }
 }

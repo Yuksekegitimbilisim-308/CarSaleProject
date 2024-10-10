@@ -42,6 +42,7 @@
             btnCarForm.TabIndex = 0;
             btnCarForm.Text = "Araç Yönetimi";
             btnCarForm.UseVisualStyleBackColor = true;
+            btnCarForm.Click += btnCarForm_Click;
             // 
             // btnSalesMForm
             // 
@@ -51,6 +52,7 @@
             btnSalesMForm.TabIndex = 1;
             btnSalesMForm.Text = "Satış Temsilcileri";
             btnSalesMForm.UseVisualStyleBackColor = true;
+            btnSalesMForm.Click += btnSalesMForm_Click;
             // 
             // dataGridView1
             // 

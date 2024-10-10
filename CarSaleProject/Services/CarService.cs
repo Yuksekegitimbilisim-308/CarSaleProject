@@ -8,11 +8,11 @@ namespace CarSaleProject.Services
     public class CarService : ICarService
     {
         ICarRepository _repository;
-        CarSalesDbContext _context;
-        public CarService()
+        //CarSalesDbContext _context;
+        public CarService(CarSalesDbContext context)
         {
-            _context = new CarSalesDbContext();
-            _repository = new CarRepository(_context);
+            //_context = new CarSalesDbContext();
+            _repository = new CarRepository(context);
         }
 
         public void Add(Car entity)

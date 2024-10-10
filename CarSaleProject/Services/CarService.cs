@@ -1,21 +1,18 @@
 ﻿using CarSaleProject.Abstract.Repositories;
 using CarSaleProject.Abstract.Services;
 using CarSaleProject.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CarSaleProject.Repositories;
 
 namespace CarSaleProject.Services
 {
     public class CarService : ICarService
     {
         ICarRepository _repository;
-
-        public CarService(ICarRepository repository)
+        CarSalesDbContext _context;
+        public CarService()
         {
-            _repository = repository;
+            _context = new CarSalesDbContext();
+            _repository = new CarRepository(_context);
         }
 
         public void Add(Car entity)
